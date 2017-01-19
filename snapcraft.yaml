@@ -1,0 +1,18 @@
+name: remote-monitor 
+version: '0.1' 
+summary: This is a remote-monitor snap for azure
+description: |
+  This is a remote-monitor sample snap for azure
+
+grade: stable # must be 'stable' to release into candidate/stable channels
+confinement: strict # use 'strict' once you have the right plugs and slots
+
+apps:
+  remote-monitor:
+    command: bin/sample_app
+    plugs: [network]
+
+parts:
+  remote:
+    plugin: cmake
+    source: ./src
